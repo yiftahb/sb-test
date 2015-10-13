@@ -10,7 +10,7 @@ var config = require('config'), // Use for config parsing
 // The express application
 var app = express();
 
-// instantiate the websocket instance
+// Instantiate the websocket instance
 require('express-ws')(app);
 
 // Configure the middleware

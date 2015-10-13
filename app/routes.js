@@ -9,6 +9,6 @@ module.exports = {
         app.post('/api/upload', upload.single('urlFile'), controllers.uploadController); // Uploads a file
 
         // The WS routes
-        app.ws('/parserDone', controllers.parserDone);
+        app.ws('/parserDone', controllers.parserDoneController);
     }
 };

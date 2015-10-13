@@ -51,12 +51,12 @@ module.exports = {
         });
     },
 
-    parserDone: function(ws, req) {
+    parserDoneController: function(ws, req) {
         eventEmitter.emitter.on('parserIsDone', function() {
             try {
                 ws.send('done');
             } catch (e) {
-                console.log("Could not send back to socket: " + e);
+                console.log("Could not send back through the socket: " + e);
             }
         });
     },
