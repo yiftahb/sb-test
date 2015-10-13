@@ -1,6 +1,6 @@
 var config = require('config'), // Use for config parsing
     express = require('express'), // Express framework
-    job = require('./app/job') // The schedule object
+    job = require('./app/job') // The job object
     multer = require('multer'), // Use multer to upload the url file
     parser = require('./app/parser'), // Handles the HTML parsing
     routes = require('./app/routes'), // Handle routes in another file
