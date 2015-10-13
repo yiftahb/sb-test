@@ -6,7 +6,7 @@ var services = angular.module('htmlParser.services', ['ngWebSocket']);
 services.factory('parserAPI', function($http, $rootScope) {
     // The service object
     var parserAPI = {
-        // Let's get the data
+        // Let's delete this item
         deleteFile: function (id) {
             return $http.get('/api/delete/' + id);
         },
@@ -22,7 +22,7 @@ services.factory('parserAPI', function($http, $rootScope) {
             });
         },
 
-        // Let's get the data
+        // Let's send a raparse request to the server, when it will be done, we'll get a message through the websocket
         reparseData: function () {
             return $http.get('/api/reparse');
         }
