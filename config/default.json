@@ -1,0 +1,25 @@
+{
+  "mysql": {
+    "host": "127.0.0.1",
+    "user": "root",
+    "password": "",
+    "database": "htmlparser"
+  },
+  "parser": {
+    "every": {
+      "minute": 0
+    }
+  },
+  "query": {
+    "deleteFileRow": "DELETE FROM files WHERE id = ?;",
+    "insertFileRow": "INSERT INTO files (`name`) VALUES (?);",
+    "insertUrlRows": "INSERT INTO file_urls (`file_id`, `url`) VALUES ",
+    "selectAll": "SELECT files.id as file_id, files.name, files.created_at, file_urls.id, file_urls.url, file_urls.status, file_urls.images, file_urls.scripts, file_urls.styles, file_urls.processed_at FROM files LEFT JOIN file_urls ON files.id = file_urls.file_id ORDER BY files.id ASC;",
+    "selectUrls": "SELECT DISTINCT url FROM file_urls;",
+    "updateUrl": "UPDATE file_urls SET `status` = ?, `images` = ?, `scripts` = ?, `styles` = ?, `processed_at` = CURRENT_TIMESTAMP WHERE url = ?;"
+  },
+  "server": {
+    "ip": "127.0.0.1",
+    "port": 3000
+  }
+}

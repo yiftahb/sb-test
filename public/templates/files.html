@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Files
+
+        <div class="btn-group pull-right" uib-dropdown>
+            <button type="button" class="btn btn-default btn-xs" uib-dropdown-toggle>
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+            </button>
+            <ul class="uib-dropdown-menu" role="menu" aria-labelledby="split-button">
+                <li role="menuitem"><a href="#" ng-click="refreshData()">Refresh</a></li>
+                <li role="menuitem"><a href="#" ng-click="reparseData()">Reparse Data</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="panel-body">
+
+        <div ng-if="files.length === 0">
+        No files were found
+        </div>
+
+        <ul class="list-unstyled">
+            <li ng-repeat="(file_id, file) in files" class="file">
+                <span class="pull-right">
+                    <button class="btn btn-danger btn-md btn-delete" ng-click="deleteFile(file_id)">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </span>
+                    <strong><a href="#" ng-click="toggleData(file_id);;" class="file-link">{{ file.name }}</a></strong> <span class="badge badge-success">{{ file.urls.length }} URLs</span> <br/>
+                <small>Uploaded on {{ file.created_at }}</small>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div ng-repeat="(file_id, file) in files" ng-if="currentData === file_id" class="col-md-12 well">
+    <div class="col-md-12">
+        <h4>{{ file.name }}</h4>
+        <uib-tabset vertical="true" type="pills">
+            <uib-tab ng-repeat="url in file.urls">
+                <tab-heading>
+                    <span class="label label-danger" ng-if="url.status !== 200">Error</span>
+                    <span class="label label-success" ng-if="url.status === 200">200</span>
+                    {{ url.url }}
+                    <small class="pull-right" ng-if="url.status === 200">Processed on {{ url.processed_at }}</small>
+                </tab-heading>
+                <br/>
+                <span ng-if="url.status === 200">
+                    <uib-tabset justified="true">
+                        <uib-tab heading="Images">
+                            <br/>
+                            <ul>
+                                <li ng-repeat="img in url.images track by $index">{{ img }}</li>
+                            </ul>
+                        </uib-tab>
+                        <uib-tab heading="Scripts">
+                            <br/>
+                            <ul>
+                                <li ng-repeat="script in url.scripts track by $index">{{ script }}</li>
+                            </ul>
+                        </uib-tab>
+                        <uib-tab heading="Styles">
+                            <br/>
+                            <ul>
+                                <li ng-repeat="style in url.styles track by $index">{{ style }}</li>
+                            </ul>
+                        </uib-tab>
+                    </uib-tabset>
+                </span>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Upload a new file
+
+        <div class="btn-group pull-right">
+            <button class="btn btn-success btn-xs" ng-click="uploadFile()">
+                <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Upload
+            </button>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+    <div class="panel-body">
+        <div>
+            <input type="file" nv-file-select name="urlFile" id="urlFile" uploader="uploader" />
+        </div>
+
+        <div class="alert alert-danger" ng-if="error">
+            {{ error }}
+        </div>
+    </div>
+</div>

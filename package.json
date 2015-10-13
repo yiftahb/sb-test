@@ -1,0 +1,30 @@
+{
+  "name": "htmlparser",
+  "version": "1.0.0",
+  "description": "receives a file containing many urls and parses them",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yiftahb/sb-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yiftahb/sb-test/issues"
+  },
+  "homepage": "https://github.com/yiftahb/sb-test#readme",
+  "dependencies": {
+    "config": "^1.16.0",
+    "express": "^4.13.3",
+    "express-ws": "^0.2.6",
+    "htmlparser2": "^3.8.3",
+    "multer": "^1.0.6",
+    "mysql": "^2.9.0",
+    "node-schedule": "^0.2.9",
+    "request": "^2.65.0",
+    "valid-url": "^1.0.9"
+  }
+}
