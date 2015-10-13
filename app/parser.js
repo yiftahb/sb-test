@@ -8,8 +8,6 @@ var config = require('config'), // Get the configuration data
 module.exports = {
     working: false,
 
-    job: null,
-
     urls: [],
 
     isWorking: function() {
